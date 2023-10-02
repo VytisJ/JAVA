@@ -1,0 +1,21 @@
+// Variantas 1: Sinchroninis - Uždedam tekstą tuščiam p, pakeičiam teksto spalvą, alert'inam tekstą, kuris buvo uždėtas
+const p1 = document.getElementById('myParagraph');
+p1.innerText = 'Sinchroninis variantas';
+p1.style.color = 'blue';
+alert(p1.innerText);
+
+// Variantas 2: Sinchroninis - Uždedam tekstą tuščiam p, alert'inam tekstą, kuris buvo uždėtas, bet panaudodami onload metodą, pakeičiam teksto spalvą
+const p2 = document.getElementById('myParagraph');
+p2.innerText = 'Sinchroninis variantas (onload)';
+window.onload = function () {
+    alert(p2.innerText);
+    p2.style.color = 'red';
+};
+
+// Variantas 3: Asinchroninis - Uždedam tekstą tuščiam p, panaudodami setTimeout metodą, alert'inam tekstą, kuris buvo uždėtas, pakeičiam teksto spalvą
+const p3 = document.getElementById('myParagraph');
+p3.innerText = 'Asinchroninis variantas';
+setTimeout(function () {
+    alert(p3.innerText);
+    p3.style.color = 'green';
+}, 1000); // Nustatome 1000ms (1 sekundė) delsą, kad pirmiausiai pasirodytų alert'as
